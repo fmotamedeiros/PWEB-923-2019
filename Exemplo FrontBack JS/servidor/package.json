@@ -1,0 +1,21 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "Servidor Exemplo",
+  "main": "servidor.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.17.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Servidor",
+    "Exemplo"
+  ],
+  "author": "Flávio Medeiros",
+  "license": "ISC"
+}
