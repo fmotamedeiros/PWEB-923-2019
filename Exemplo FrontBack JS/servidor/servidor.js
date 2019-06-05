@@ -34,16 +34,18 @@ app.get('/cadastro', (request, response) => {
     
     connection.connect();
 
-    var sql = `INSERT INTO usuarios VALUES (${email}, ${senha}, ${nome});`; 
+    var sql = `INSERT INTO usuarios (email, senha, nome) VALUES (${email}, ${senha}, ${nome});`; 
 
     connection.query(sql, function (error, results, fields) {
-      if (error) throw error;
-      connection.end();
-      response.send('Não foi possível realizar o cadastro!');
+      if (error) {
+        connection.end();
+        response.send('Não foi possível realizar o cadastro!'); 
+      } else {
+        connection.end();
+        response.send('Usuário cadastrado com sucesso!');
+      }
     });
     
-    connection.end();
-    response.send('Email cadastradado: ' + email);
 })
 
 app.listen(port, (err) => {
